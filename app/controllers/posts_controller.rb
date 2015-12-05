@@ -10,13 +10,47 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-		@post.save
 
-		redirect_to posts_path
+		if @post.save
+  		flash[:notice] = "Your post was created successfully"
+  		redirect_to posts_path
+  	else
+  		render :new
+  	end
+
 	end
 
 	def show
 		@post = Post.find(params[:id])
+		@comment = Comment.new
+	end
+
+	def edit
+		@post = Post.find(params[:id])
+	end
+
+	def update
+		@post = Post.find(params[:id])
+
+	 	if @post.update(post_params)
+  		flash[:notice] = "Post was updated successfully"
+  		redirect_to posts_path(@post)
+  	else
+  		render :edit
+  	end
+
+	end
+
+	def destroy
+		@post = Post.find(params[:id])
+
+		if @post.destroy
+			flash[:notice] = "Post was deleted successfully"
+  		redirect_to root_path
+  	else
+  		render :edit
+  	end
+
 	end
 
 	private
