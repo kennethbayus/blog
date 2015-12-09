@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+	before_action :require_user, except:[:index, :show]
+
 	def index
 		@posts = Post.all.order('created_at DESC')
 	end
@@ -34,7 +36,7 @@ class PostsController < ApplicationController
 
 	 	if @post.update(post_params)
   		flash[:notice] = "Post was updated successfully"
-  		redirect_to posts_path(@post)
+  		redirect_to post_path(@post)
   	else
   		render :edit
   	end
@@ -55,7 +57,7 @@ class PostsController < ApplicationController
 
 	private
 		def post_params
-			params.require(:post).permit(:title, :body)
+			params.require(:post).permit(:title, :body, :photo)
 		end
 
 end
