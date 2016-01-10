@@ -17,6 +17,169 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1000px;
+    }
+}
+
+#myCarousel{
+    margin: 20px auto;
+    width: 700px;
+}
+
+.profile-pic {
+	border-radius: 50%;
+}
+
+body{
+	background-color: #f2f2f2;
+	font-family: "HelveticaNeue-Light", Arial;
+}
+
+h1{
+	font-family: "HelveticaNeue-Regular", Arial;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	font-size:1.5em;
+	font-weight:bold;
+	text-align: center;
+}
+
+h2 {
+	font-family: "HelveticaNeue-Regular", Arial;
+	padding-top:1%;
+	font-size:2em;
+	padding-bottom:3%;
+}
+
+h3{
+	font-family: "HelveticaNeue-Medium", Arial;
+	padding-top:1%;
+	font-size:1.2em;
+	color: black;
+}
+
+h4 {
+	font-family: "HelveticaNeue-Regular", Arial;
+	text-align: center;
+}
+
+h5 {
+	text-align: center;
+	font-size: 1em;
+}
+
+p {
+	font-size: 1.3em;
+	font-family: "HelveticaNeue-Thin", Arial;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #1DC497;
+}
+
+.footer {
+	background-color: black;
+}
+
+.footer-nav li{
+	padding:5px;
+	list-style: none;
+	color:#1DC497;
+
+}
+
+.footer-nav li h3{
+	list-style: none;
+	color:#1DC497;
+}
+
+.footer-nav ul{
+	list-style:none;
+}
+
+.footer-nav a{
+	color:#1DC497;
+}
+
+.navbar{
+	padding-bottom: 0%;
+	margin-bottom: 0%;
+	background-color: black;
+}
+
+.navbar-header .navbar-brand{
+	color:#f2f2f2;
+	font-family: cursive;
+}
+
+.navbar-default .navbar-text a{
+	text-decoration: none;
+	color: #f2f2f2;
+	font-family: "HelveticaNeue-Light", Arial;
+}
+
+.navbar-default .navbar-text {
+	text-decoration: none;
+	color: #1DC497;
+	font-family: "HelveticaNeue-Regular", Arial;
+}
+
+
+.row{
+	padding-bottom: 4%;
+}
+
+.container{
+	padding-top: 5%;
+
+}
+
+.post_title {
+	text-align: left;
+	font-size:1.5em;
+}
+
+.post_listing_header{
+	text-align: center;
+}
+
+.posted_by{
+	text-align: center;
+}
+
+.posted_date{
+	text-align: center;
+}
+
+.post_tag{
+	text-align: center;
+}
+
+.tag{
+	font-family: "HelveticaNeue-Regular", Arial;
+}
+
+.cat-tag{
+	display: block;
+}
+
+.tags{
+	margin: 0px;
+	padding: 0px;
+	display: block;
+}
+
+.mini_post_title{
+	text-align: center;
+}
+
+.mini_post_tagline{
+	text-align: center;
+}
+
 .ta{
 	width: 30em;
 	height: 8em; 
@@ -31,3 +194,5 @@
 	width: 30em;
 	height: 2em;
 }
+
+

@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
 	before_action :require_user, except:[:index, :show]
+	before_action :set_post, except:[:index, :new, :create]
 
 	def index
 		@posts = Post.all.order('created_at DESC')
@@ -12,6 +13,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+		@post.user = current_user
 
 		if @post.save
   		flash[:notice] = "Your post was created successfully"
@@ -23,17 +25,13 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find(params[:id])
 		@comment = Comment.new
 	end
 
 	def edit
-		@post = Post.find(params[:id])
 	end
 
 	def update
-		@post = Post.find(params[:id])
-
 	 	if @post.update(post_params)
   		flash[:notice] = "Post was updated successfully"
   		redirect_to post_path(@post)
@@ -44,8 +42,6 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-		@post = Post.find(params[:id])
-
 		if @post.destroy
 			flash[:notice] = "Post was deleted successfully"
   		redirect_to root_path
@@ -55,9 +51,13 @@ class PostsController < ApplicationController
 
 	end
 
+	def set_post
+		@post = Post.find_by slug: params[:id]
+	end
+
 	private
 		def post_params
-			params.require(:post).permit(:title, :body, {photos: []})
+			params.require(:post).permit(:title, :body, {photos: []}, :tag_line, category_ids: [])
 		end
 
 end

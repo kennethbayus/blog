@@ -16,4 +16,5 @@
 !/log/.keep
 /tmp
 
-/public/uploads
+#Ignore locally stored uploads
+/public/uploads/*

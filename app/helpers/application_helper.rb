@@ -21,4 +21,8 @@ def markdown(text)
     markdown.render(text).html_safe
   end
 
+def display_date_time(dt)
+  dt.strftime("%B %e")+', '+dt.strftime("%Y")
+end
+
 end

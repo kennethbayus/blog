@@ -1,7 +1,7 @@
-<% p = @post.photos.size %>
+<% p = post.photos.size %>
 
 <% if p == 1 %>
-  <%= image_tag @post.photos[0].large.url %>
+  <%= image_tag post.photos[0].large.url, class: 'img-responsive center-block'%>
 <% else %>
 
 
@@ -20,12 +20,12 @@
 
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <%= image_tag @post.photos[0].large.url, class: 'img-responsive center-block' %>
+        <%= image_tag post.photos[0].large.url, class: 'img-responsive center-block' %>
       </div>
 
       <% (p-1).times do |i|%>
         <div class="item">
-          <%= image_tag @post.photos[i+1].large.url, class: 'img-responsive center-block' %>
+          <%= image_tag post.photos[i+1].large.url, class: 'img-responsive center-block' %>
         </div>
       <% end %>
 
