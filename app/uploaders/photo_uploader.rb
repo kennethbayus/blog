@@ -8,6 +8,10 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   storage :fog
 
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
+  end
+
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.slug}"
   end
